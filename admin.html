@@ -262,65 +262,7 @@
         </div>
       </div>
 
-      <!-- DESIGN VIEW -->
-      <div class="view" id="view-design">
-        <div class="view-head">
-          <div><h2>Design</h2><p>Change the website's colors. Changes go live instantly for every visitor.</p></div>
-        </div>
-        <div class="card">
-          <form id="designViewForm" onsubmit="return saveDesign(event)">
-            <div class="color-grid">
-              <div class="color-field"><label>Page background</label><input type="color" id="colorBg" value="#F6F7FB"></div>
-              <div class="color-field"><label>Card background</label><input type="color" id="colorCard" value="#FFFFFF"></div>
-              <div class="color-field"><label>Heading text</label><input type="color" id="colorInk" value="#161A2C"></div>
-              <div class="color-field"><label>Body text</label><input type="color" id="colorBody" value="#4A5068"></div>
-              <div class="color-field"><label>Main brand color (buttons, tabs)</label><input type="color" id="colorBrand" value="#5B6CFF"></div>
-              <div class="color-field"><label>Brand gradient end</label><input type="color" id="colorBrand2" value="#8B5CF6"></div>
-              <div class="color-field"><label>Accent (highlights)</label><input type="color" id="colorAccent" value="#22C4A8"></div>
-              <div class="color-field"><label>Gradient pop (headline end)</label><input type="color" id="colorPink" value="#FF7EB6"></div>
-            </div>
-            <div style="display:flex; gap:12px; margin-top:24px; flex-wrap:wrap;">
-              <button type="submit" class="btn">Save colors</button>
-              <button type="button" class="btn ghost" onclick="resetDesign()">Reset to default</button>
-            </div>
-            <p class="msg" id="designMsg"></p>
-          </form>
-        </div>
-        <div class="card" style="background:#FFF8EE; border:1px solid #EAD9BC;">
-          <p style="font-size:13px; color:#7A6A4F; line-height:1.6;">💡 Tip: keep heading/body text dark and backgrounds light (or the reverse) so the site stays readable. After saving, open the live site to check every section looks right.</p>
-        </div>
-      </div>
-
-    </div>
-  </div>
-</div>
-
-<script type="module">
-  import { initializeApp } from "https://www.gstatic.com/firebasejs/10.12.0/firebase-app.js";
-  import {
-    getAuth, signInWithEmailAndPassword, onAuthStateChanged, signOut
-  } from "https://www.gstatic.com/firebasejs/10.12.0/firebase-auth.js";
-  import {
-    getFirestore, collection, addDoc, updateDoc, deleteDoc, doc, getDoc, setDoc,
-    onSnapshot, query, orderBy, serverTimestamp
-  } from "https://www.gstatic.com/firebasejs/10.12.0/firebase-firestore.js";
-
-  const firebaseConfig = {
-    apiKey: "AIzaSyDeKV88PVyBlNB8lxolfTuoeU0UTEnY7I8",
-    authDomain: "oversized-store.firebaseapp.com",
-    projectId: "oversized-store",
-    storageBucket: "oversized-store.firebasestorage.app",
-    messagingSenderId: "772182862392",
-    appId: "1:772182862392:web:d75ceb5578ce11eb0e14cd",
-    measurementId: "G-7DG8CTEGTS"
-  };
-
-  const OWNER_EMAIL = "oversizeapparel6@gmail.com";
-
-  const app = initializeApp(firebaseConfig);
-  const auth = getAuth(app);
-  const db = getFirestore(app);
-
+      
   /* ---------- auth ---------- */
   window.doSignIn = function(){
     const email = document.getElementById('email').value.trim();
